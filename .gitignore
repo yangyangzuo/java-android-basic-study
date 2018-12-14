@@ -1,0 +1,79 @@
+###########新建一个 Android Studio 工程时会默认建立两个 .gitignore 文件
+
+#项目根目录下.gitignore
+#   *.iml
+#   .gradle
+#   /local.properties
+#   /.idea/workspace.xml
+#   /.idea/libraries
+#   .DS_Store
+#   /build
+#   /captures
+
+#app目录下.gitignore
+#   /build
+
+
+
+#######顶层.gitignore修改如下,stackoverflow中的
+
+# apply from stackoverflow by sam
+#
+# http://stackoverflow.com/questions/16736856/what-should-be-in-my-gitignore-for-an-android-studio-project
+#
+
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+
+
+.DS_Store
+
+####built application files
+*.apk
+*.ap_
+
+####files for the dex VM
+*.dex
+
+####Java class files
+*.class
+
+####generated files
+bin/
+gen/
+
+####Local configuration file (sdk path, etc)
+local.properties
+
+####Windows thumbnail db
+Thumbs.db
+
+####OSX files
+.DS_Store
+
+####Eclipse project files
+.classpath
+.project
+
+####Android Studio
+*.iml
+.idea
+
+#####.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
+.gradle
+build/
+
+
+#####NDK
+obj/
+
+
+
+*.swp
+*~

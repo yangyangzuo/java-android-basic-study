@@ -1,0 +1,96 @@
+package com.example.gudandan.app;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //activity表示一个窗体界面,通过setContentView()方法，设置当前页面显示的内容和布局方式
+        //R.layout对应着res下的layout目录，res下的目录会自动作为属性被映射到R对象上
+        setContentView(R.layout.activity_main);
+        this.setContentView(R.layout.mylayout);
+    }
+}
+
+/*
+android官网:
+    墙内:
+        https://developer.android.google.cn/
+    墙外:
+        https://developer.android.com/
+
+
+虚拟机:
+    jvm(基于栈结构/内存):
+        java虚拟机(java virtual machine)
+        java -> .class -> .jar
+
+
+    dvm(基于寄存器结构/cpu中缓存):
+        android java虚拟机(dalvik virtual machine)
+
+        javac转换.java ---> 字节码文件(.class)
+        dx工具把所有的.class转换为一个.dex文件，才能在android java虚拟机上执行
+
+
+
+相关概念:
+    ADT: android development tools(安卓开发工具集),以前开发android程序的插件，需要在eclipse中安装，才能开发android程序
+
+    AVD: android virtual device(安卓虚拟设备)
+
+    ART(android runtime)模式:
+        在传统的dalvik java虚拟机上，运行模式需要一个编译器来实现与应用程序之间沟通，应用程序每次运行时，
+        需要把程序内的代码转变为机器码运行，无形中增加了一道手续，会造成耗电量大，占用内存等缺点
+
+        (android4.4之后google研发的art模式)art模式中解决了这个问题，通过安装应用程序时，自动对程序代码预读取编译，让程序语言直接编译成机器语言，
+        省去了dalvik模式要实时转换代码，实现了高效率，省电，暂用更低的内存，手机运行流畅
+
+        art模式的缺点:暂用更多的存储空间，安装程序时需要更多的时间来实现预编译
+
+    aapt:
+        android application package tools,安装应用程序打包工具
+
+    adb:
+        android debug bridge,安卓调试桥工具
+        https://developer.android.google.cn/studio/command-line/adb
+
+
+    sdk:
+        software development kit,软件开发工具包，android的sdk在studio的工具条中有一个下拉箭头，是sdk manager，点开
+        可以看到sdk的详细配置，里面有一个android sdk location,里面的地址就是相关的sdk存放位置
+        (command+shift+.)打开隐藏文件
+        这个目录里面包含了所有的开发需要的内容，例如：源代码，文档，adb工具等等
+
+
+        android例子代码的导入:
+           打开androidstudio，可以看到Import an android code sample，点击该选项，会自动下载样例代码
+           如果已经打开了了androidstudio，则关闭当前项目，退回到androidstudio刚打开的页面即可
+
+
+应用的安装过程:
+    1.java编译器--->java--->.class文件
+    2.dx工具------>.class文件--->.dex文件
+    3.相关资源文件打包,签名---->apk文件
+    4.adb工具--->adb install ***.apk(安装到模拟器)
+
+应用的启动过程:
+    点击模拟器上的程序图标--->
+    查找该程序中AndroidManifest.xml文件--->
+    文件中的入口activity---->
+    activity中指定的java类---->
+    创建进程--->创建主线程-->主线程中创建该类的实例对象--->
+    操作系统把应用相关的信息(context)存放到该实例对象中，然后调用该实例对象中的onCreated()方法
+
+
+
+
+项目文件夹说明:
+    manifests:项目配置文件目录
+    java:源码目录
+    res:资源文件目录
+
+ */

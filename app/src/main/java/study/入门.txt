@@ -1,0 +1,40 @@
+android java虚拟机(dalvik virtual machine)
+
+代码执行方式:
+dx工具
+---> 转换java的字节码文件(.class)
+---> 转换为.dex文件，才能在android java虚拟机上执行
+
+相关概念:
+    ADT: android development tools(安卓开发工具集),以前开发android程序的插件，需要在eclipse中安装，才能开发android程序
+    AVD: android virtual device(安装虚拟设备)
+
+
+
+应用的安装过程:
+    1.java编译器--->java--->.class文件
+    2.dx工具------>.class文件--->.dex文件
+    3.相关资源文件打包,签名---->apk文件
+    4.adb工具--->adb install ***.apk(安装到模拟器)
+
+应用的启动过程:
+    点击模拟器上的程序图标--->
+    查找该程序中AndroidManifest.xml文件--->
+    文件中的入口activity---->
+    activity中指定的java类---->
+    创建进程--->创建主线程-->主线程中创建该类的实例对象--->
+    操作系统把应用相关的信息(context)存放到该实例对象中，然后调用该实例对象中的onCreated()方法
+
+
+
+
+
+
+
+
+
+
+
+
+
+
